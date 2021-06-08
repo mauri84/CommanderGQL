@@ -1,8 +1,7 @@
-SELECT TOP (1000)
-  [Id]
-      , [Name]
-      , [LicenseKey]
+SELECT *
 FROM [CommandsDB].[dbo].[Platforms]
+SELECT *
+FROM [CommandsDB].[dbo].[Commands]
 
 -- INSERT INTO Platforms
 --   ([Name])
@@ -17,3 +16,19 @@ FROM [CommandsDB].[dbo].[Platforms]
 -- VALUES
 --   ('Windows', '78979879879870987')
 
+INSERT INTO Commands
+  ([HowTo],[CommandLine],[PlatformId])
+VALUES
+  ('Build a project', 'dotnet build', 1)
+INSERT INTO Commands
+  ([HowTo],[CommandLine],[PlatformId])
+VALUES
+  ('Run a project', 'dotnet run', 1)
+INSERT INTO Commands
+  ([HowTo],[CommandLine],[PlatformId])
+VALUES
+  ('Start a docker compose file', 'docker-compose up -d', 2)
+INSERT INTO Commands
+  ([HowTo],[CommandLine],[PlatformId])
+VALUES
+  ('Stop a docker compose file', 'docker-compose stop', 2)
