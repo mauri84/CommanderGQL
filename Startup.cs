@@ -13,7 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using GraphQL.Server.Ui.Voyager;
-
+using CommanderGQL.GraphQL.Platforms;
+using CommanderGQL.GraphQL.Commands;
 
 namespace CommanderGQL {
   public class Startup {
@@ -31,6 +32,8 @@ namespace CommanderGQL {
       services
         .AddGraphQLServer()
         .AddQueryType<Query>()
+        .AddType<PlatformType>()
+        .AddType<CommandType>()
         .AddProjections(); // Needed for nested queries, otherwise GQL doesn't know how to bring back the nested object.
     }
 
