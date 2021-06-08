@@ -34,6 +34,8 @@ namespace CommanderGQL {
         .AddQueryType<Query>()
         .AddType<PlatformType>()
         .AddType<CommandType>()
+        .AddFiltering()
+        .AddSorting()
         .AddProjections(); // Needed for nested queries, otherwise GQL doesn't know how to bring back the nested object.
     }
 
