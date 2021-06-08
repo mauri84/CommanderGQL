@@ -30,7 +30,8 @@ namespace CommanderGQL {
       services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CommandConStr")));
       services
         .AddGraphQLServer()
-        .AddQueryType<Query>();
+        .AddQueryType<Query>()
+        .AddProjections(); // Needed for nested queries, otherwise GQL doesn't know how to bring back the nested object.
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

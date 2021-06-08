@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace CommanderGQL.Models {
   public class Platform {
@@ -6,5 +7,6 @@ namespace CommanderGQL.Models {
     [Required]
     public string Name { get; set; }
     public string LicenseKey { get; set; }
+    public ICollection<Command> Commands { get; set; } = new List<Command>();
   }
 }
