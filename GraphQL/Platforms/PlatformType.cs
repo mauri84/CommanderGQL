@@ -8,7 +8,9 @@ using CommanderGQL.Data;
 namespace CommanderGQL.GraphQL.Platforms {
   public class PlatformType : ObjectType<Platform> {
     protected override void Configure (IObjectTypeDescriptor<Platform> descriptor) {
+
       descriptor.Description("Represents any Software or Service that has a Command line Interface.");
+
       descriptor
         .Field(f => f.LicenseKey).Ignore();
 
